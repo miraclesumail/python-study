@@ -58,7 +58,8 @@ handler = make_handler()
 
 
 def call(handler,*arg):
-    next(handler)
+    handler.send(None)
+    # next(hanler) 也可以
     for i in arg:
         for ele in i:
             handler.send(ele)
