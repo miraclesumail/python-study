@@ -1,3 +1,5 @@
+# coding=utf-8
+
 from inspect import signature
 from functools import wraps
 
@@ -60,7 +62,6 @@ spam(1, '2', 3)
 spam(1, 'hello', 3)
 spam(1, 'sss', 8)
 
-from functools import wraps
 
 class A:
     # Decorator as an instance method
