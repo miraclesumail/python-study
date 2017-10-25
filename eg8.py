@@ -1,31 +1,31 @@
 # coding=utf-8
 
-# class MixinA:
-#     def __getattr__(self, item):
-#        # Process item and return value if known
-#        if item == 'a':
-#            return 'MixinA'
-#        return super().__getattr__(item)
+class MixinA:
+    def __getattr__(self, item):
+       # Process item and return value if known
+       if item == 'a':
+           return 'MixinA'
+       return super().__getattr__(item)
 
-# class MixinB:
-#     def __getattr__(self, item):
-#        # Process item and return value if known
-#        if item == 'b':
-#            return 'MixinB'
+class MixinB:
+    def __getattr__(self, item):
+       # Process item and return value if known
+       if item == 'b':
+           return 'MixinB'
 
-#        return super().__getattr__(item)
+       return super().__getattr__(item)
 
-# class Example(MixinA, MixinB):
-#     # main class
-#     def __getattr__(self, item):
-#         if item == 'c':
-#            return 'MixinC'
-#         return super().__getattr__(item)
+class Example(MixinA, MixinB):
+    # main class
+    def __getattr__(self, item):
+        if item == 'c':
+           return 'MixinC'
+        return super().__getattr__(item)
 
-# # e.c从自身拿不到 就会去找上级
-# e = Example()
-# print e.a    
-# print e.c
+# e.c从自身拿不到 就会去找上级
+e = Example()
+print e.a    
+print e.c
 
 class MixinA:
     @property
